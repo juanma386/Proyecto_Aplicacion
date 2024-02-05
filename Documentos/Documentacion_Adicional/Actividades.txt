@@ -1,0 +1,21 @@
+
+MYSQL SERVER BASE DE DATOS:
+
+DATABASE: 	database_name
+USER:		database_user_name
+PASSWORD: 	database_password
+
+ARCHIVOS FTP SERVER:
+IP_ADDRESS : ftp://127.0.0.1
+ftp_user: user@example.com
+ftp_pass: 0123456789
+
+
+echo 'wp core download --locale=es_ES' > install.sh
+echo 'wp core config --dbname=g001_wp_main --dbuser=g001_wp_user --dbpass=if7GcSccsxBK' >> install.sh
+
+echo 'wp core install --url=example.com --title="Example Website" --admin_user=user_admin --admin_password=0123456789 --admin_email=admin@example.com' >> install.sh
+
+/** PUT FILE UPLOAD FILE */
+curl -k --ftp-ssl -u ftp_user:ftp_pass -T filesource.zip ftp://IP_ADDRESS/filedestine.zip
+
